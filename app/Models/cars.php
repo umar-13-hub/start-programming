@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class cars extends Model
 {
-    protected $fillabl = [
-        'title',
+    protected $fillable = [
+        'name',
         'price',
         'year',
         'color',
-        'speed'
+        'speed',
     ];
 }
