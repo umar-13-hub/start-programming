@@ -2,32 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Items;
+
+use App\Models\Cars;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function cars(Request $request)
+    public function index()
+    {
+        $model = Cars::all();
+        return view('home', [
+            'cars' => $model
+        ]);
+    }
+
+    public function create(Request $request)
 
     {
-        $cars = Items::create([
+        $cars = Cars::create([
             'name' => $request->input('bmw'),
             'price' => $request->input('200000'),
             'year' => $request->input('2006'),
             'colour' => $request->input('white'),
-            'speed' => $request->input('360'),
+            'speed' => $request->input('320'),
         ]);
 
-    }
-
-    public function create (Request $request)
-    {
-        $model = new Items();
-        $model->name = $request->input('name');
-        $model->price = $request->input('price');
-        $model->year = $request->input('price');
-        $model->colour = $request->input('colour');
-        $model->speed = $request->input('speed');
-        $model->save();
     }
 }

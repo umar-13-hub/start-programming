@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class cars extends Model
+class Currency extends Model
 {
+    protected $table = 'currency';
     protected $fillable = [
         'name',
+        'code',
         'price',
-        'year',
-        'color',
-        'speed',
+        'is_active'
     ];
 }

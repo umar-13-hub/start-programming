@@ -13,4 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'cars']);
+// /cars
+//Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+//Route::get('/cars', [\App\Http\Controllers\HomeController::class, 'create']);
+// /news
+//Route::get('/', [\App\Http\Controllers\NewsController::class, 'index']);
+//Route::post('/news', [\App\Http\Controllers\NewsController::class, 'create']);
+// /currency
+Route::get('/', [\App\Http\Controllers\CurrencyController::class, 'index']);
+Route::get('/create', [\App\Http\Controllers\CurrencyController::class, 'create']);
+Route::post('/store', [\App\Http\Controllers\CurrencyController::class, 'store']);
