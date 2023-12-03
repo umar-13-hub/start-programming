@@ -13,13 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// /cars
-//Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
-//Route::get('/cars', [\App\Http\Controllers\HomeController::class, 'create']);
-// /news
-//Route::get('/', [\App\Http\Controllers\NewsController::class, 'index']);
-//Route::post('/news', [\App\Http\Controllers\NewsController::class, 'create']);
-// /currency
-Route::get('/', [\App\Http\Controllers\CurrencyController::class, 'index']);
-Route::get('/create', [\App\Http\Controllers\CurrencyController::class, 'create']);
-Route::post('/store', [\App\Http\Controllers\CurrencyController::class, 'store']);
+Route::prefix('cars')->group(function (){
+    Route::get('/', [\App\Http\Controllers\CarsController::class, 'index'])->name('index');
+    Route::get('create', [\App\Http\Controllers\CarsController::class, 'create'])->name('create');
+    Route::post('store', [\App\Http\Controllers\CarsController::class, 'store'])->name('store');
+});
