@@ -9,7 +9,7 @@
                 <h3 class="fw-bold h1 mb-3 text-capitalize text-dark">Experience a Rental service like never before</h3>
                 <div class="bg-primary col-2 d-inline-flex mb-3 pb-1"></div>
                 <p class="mb-4">
-                    Here you can find the car that suits you. First customers get a 5% discount !!!</p>
+                    Here you can find the car that suits you. First customers get a 15% discount !!!</p>
                 <a href="#" class="btn btn-primary pb-2 pe-4 ps-4 pt-2">Learn More</a>
             </div>
         </div>
