@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cars;
 use Illuminate\Http\Request;
 
 class CarsController
@@ -11,11 +12,14 @@ class CarsController
      */
     public function index()
     {
-        return view('cars/list');
+        $cars = Cars::all();
+        return view('cars/index', [
+            'cars' => $cars
+        ]);
     }
 
     /**
-     * Form create cars
+     * Form create car
      */
     public function create()
     {
@@ -31,12 +35,13 @@ class CarsController
     {
         $request->validate([
            'name' => 'required|string|min:2',
-           'model' => 'required|string|min:3'
+           'model'=> 'required|string|min:1'
         ]);
         $model = Cars::create([
-            'name' => $request->input('name'),
-            'model' => $request->input('model'),
-            'price' => $request->input('price'),
+            'name'=> $request->input('name'),
+            'model'=> $request->input('model'),
+            'price'=> $request->input('price'),
+            'is_active'=> $request->input('is_active')
         ]);
         return redirect()->back();
     }
@@ -45,27 +50,50 @@ class CarsController
      * @param int $id
      * @param Request $request
      */
-    public function update (int $id, Request $request)
+    public function update(int $id, $request)
     {
-
+        $model = Cars::find($id);
+        if ($request->method()==='POST') {
+            $this->updateStore($id, $request);
+        }
+        return view('cars/update', [
+            'cars' => $model
+        ]);
     }
 
+    public function updateStore(int $id,Request $request)
+    {
+
+        return Cars::where('id', '=', $id)
+            ->update([
+                'name' => $request->input('name'),
+                'model' => $request->input('model'),
+                'price' => $request->input('price')
+            ]);
+    }
+
+
     /**
-     * Show the cars
-     * @param $id
+     * @param int $id
+     * Show the car
      */
     public function show(int $id)
     {
+        return view('cars/show', [
+            'cars' => Cars::find($id)
+        ]);
 
     }
 
     /**
-     * Delete cars
-     * @param $id
+     * Delete car
+     * @param int $id
+     * @return void
      */
     public function delete(int $id)
     {
+        $model = Cars::destroy($id);
+        return redirect()->route('index');
 
     }
-
 }

@@ -8,7 +8,7 @@
                 <h2 class="h5 text-primary">Rental Cars &amp; Much More</h2>
                 <h3 class="fw-bold h1 mb-3 text-capitalize text-dark">Experience a Rental service like never before</h3>
                 <div class="bg-primary col-2 d-inline-flex mb-3 pb-1"></div>
-                <p class="mb-4">Phasellus pulvinar faucibus neque, nec rhoncus nunc ultrices sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar faucibus neque, nec rhoncus nunc ultrices sit amet. Curabitur ac sagittis neque, vel egestas est.</p>
+                <p class="mb-4">Here you will find a car that suits you according to all criteria. Our company is known around the world for its quality customer service!</p>
                 <a href="#" class="btn btn-primary pb-2 pe-4 ps-4 pt-2">Learn More</a>
             </div>
         </div>
@@ -16,7 +16,7 @@
     <div class="align-items-center gy-4 row">
         <div class="col-lg-4 col-xl-3 me-auto">
             <h4 class="fw-bold h3 text-capitalize text-dark">Our Service is Built with Trust</h4>
-            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p class="mb-0">Every client is important to us. For any questions, contact the manager at: +79055831313.</p>
         </div>
         <div class="col-lg-8">
             <div class="row row-cols-lg-3 row-cols-md-3">

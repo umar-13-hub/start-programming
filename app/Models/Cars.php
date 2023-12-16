@@ -8,9 +8,10 @@ class Cars extends Model
 {
     protected $table = 'cars';
     protected $fillable = [
-        'name',
-        'model',
-        'price',
-        'image'
+      'name',
+      'model',
+      'price',
+      'image',
+      'is_active'
     ];
 }

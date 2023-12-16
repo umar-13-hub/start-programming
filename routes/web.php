@@ -14,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('cars')->group(function (){
-    Route::get('/', [\App\Http\Controllers\CarsController::class, 'index'])->name('index');
-    Route::get('create', [\App\Http\Controllers\CarsController::class, 'create'])->name('create');
-    Route::post('store', [\App\Http\Controllers\CarsController::class, 'store'])->name('store');
+    Route::get('/',[\App\Http\Controllers\CarsController::class, 'index'])->name('index');
+    Route::get('/create', [\App\Http\Controllers\CarsController::class,'create'])->name('create');
+    Route::post('/store', [\App\Http\Controllers\CarsController::class, 'store'])->name('store');
+    Route::get('show/{id}', [\App\Http\Controllers\CarsController::class, 'show'])->name('show');
+    Route::get('update/{id}', [\App\Http\Controllers\CarsController::class, 'update'])->name('update-form');
+    Route::post('update/{id}', [\App\Http\Controllers\CarsController::class, 'updateStore'])->name('update-store');
+    Route::post('delete/{id}', [\App\Http\Controllers\CarsController::class, 'delete'])->name('delete');
+
 });
